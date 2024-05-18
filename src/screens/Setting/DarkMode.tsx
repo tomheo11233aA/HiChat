@@ -1,9 +1,10 @@
 import React from 'react'
-import { Switch } from 'react-native-paper'
 import { t } from 'i18next'
 import Txt from '@common/Txt'
 import Btn from '@common/Btn'
 import { colors } from '@themes/colors'
+import { useTheme } from '@hooks/redux'
+import { Switch } from 'react-native-paper'
 import { fontSize, padding } from '@utils/responsive'
 
 type Props = {
@@ -13,6 +14,7 @@ type Props = {
 }
 
 const DarkMode: React.FC<Props> = ({ isSwitchOn, handleChangeTheme, setIsSwitchOn }) => {
+    const color = useTheme()
     return (
         <Btn
             row
@@ -24,7 +26,7 @@ const DarkMode: React.FC<Props> = ({ isSwitchOn, handleChangeTheme, setIsSwitchO
             <Txt size={fontSize.h5} flex={1}>{t('Chế độ tối')}</Txt>
             <Switch
                 value={isSwitchOn}
-                color={colors.mainColor}
+                color={color.mainColor}
                 onValueChange={() => {
                     setIsSwitchOn(!isSwitchOn)
                     handleChangeTheme(isSwitchOn ? 'light' : 'dark')
