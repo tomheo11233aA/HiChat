@@ -1,0 +1,13 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/TrustBold.ttf",
+      "sha1": "df46cc6cc52e2687d708c1d9e5916f1ffab5bc08"
+    },
+    {
+      "path": "src/assets/fonts/TrustLight.ttf",
+      "sha1": "3725869028dec2c09e1a5f92283251f0edbb224c"
+    }
+  ]
+}

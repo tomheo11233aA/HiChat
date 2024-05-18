@@ -15,6 +15,8 @@
 		7699B88040F8A987B510C191 /* libPods-DKTrustWallet-DKTrustWalletTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-DKTrustWallet-DKTrustWalletTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		BC5FFE79BEC85A5B08730317 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 0FF6928334726C8EC9BCDE97 /* PrivacyInfo.xcprivacy */; };
+		C64F114983174F14BA3B1727 /* TrustBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DBE2BAFDA35F491FA76A70CC /* TrustBold.ttf */; };
+		767F8E9101634082AB7B5535 /* TrustLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE70BB2EB1D84AC88287064B /* TrustLight.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = DKTrustWallet/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-DKTrustWallet-DKTrustWalletTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DKTrustWallet-DKTrustWalletTests.release.xcconfig"; path = "Target Support Files/Pods-DKTrustWallet-DKTrustWalletTests/Pods-DKTrustWallet-DKTrustWalletTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		DBE2BAFDA35F491FA76A70CC /* TrustBold.ttf */ = {isa = PBXFileReference; name = "TrustBold.ttf"; path = "../src/assets/fonts/TrustBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		BE70BB2EB1D84AC88287064B /* TrustLight.ttf */ = {isa = PBXFileReference; name = "TrustLight.ttf"; path = "../src/assets/fonts/TrustLight.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +131,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				68DB3EFA83704AA7B35FAD51 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -152,6 +157,16 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		68DB3EFA83704AA7B35FAD51 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				DBE2BAFDA35F491FA76A70CC /* TrustBold.ttf */,
+				BE70BB2EB1D84AC88287064B /* TrustLight.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -249,6 +264,8 @@
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				BC5FFE79BEC85A5B08730317 /* PrivacyInfo.xcprivacy in Resources */,
+				C64F114983174F14BA3B1727 /* TrustBold.ttf in Resources */,
+				767F8E9101634082AB7B5535 /* TrustLight.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
