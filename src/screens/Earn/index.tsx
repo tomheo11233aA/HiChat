@@ -1,19 +1,24 @@
 import React from 'react'
 import Item from './Item'
-import Form from './Form'
+import Header from './Header'
+import Banner from './Banner'
+import useApp from '@utils/useApp'
 import Scroll from '@common/Scroll'
-import { fakeDataCoin } from './home.mock'
+import { fakeDataCoin } from './earn.mock'
 import KeyBoardSafe from '@reuse/KeyBoardSafe'
 
-const Home = () => {
+const Earn = () => {
+  const { t, color } = useApp()
   return (
     <KeyBoardSafe>
-      <Scroll alignCenter flex={1}>
-        <Form />
+      <Scroll>
+        <Header />
+        <Banner />
         {fakeDataCoin.map((item) => (<Item key={item.id} item={item} />))}
       </Scroll>
     </KeyBoardSafe>
   )
 }
 
-export default React.memo(Home)
+export default React.memo(Earn)
+

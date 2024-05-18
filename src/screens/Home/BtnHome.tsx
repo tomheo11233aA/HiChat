@@ -2,7 +2,6 @@ import React from 'react'
 import Box from '@common/Box'
 import Btn from '@common/Btn'
 import Txt from '@common/Txt'
-import { colors } from '@themes/colors'
 import { useTheme } from '@hooks/redux'
 import { Add, ArrowDown } from 'iconsax-react-native'
 import { padding, margin, width, iconSize, fontSize, borderRadius } from '@utils/responsive'
@@ -22,27 +21,27 @@ const BtnHome: React.FC<BtnHomeProps> = ({ title, subTitle, onPress, type }) => 
             width={'100%'}
             onPress={onPress}
             radius={borderRadius.r3}
-            backgroundColor={color.gray}
             paddingVertical={padding.p2}
             paddingHorizontal={padding.p1}
+            backgroundColor={color.boxColor}
         >
             <Box
                 radius={width}
                 padding={padding.p1}
                 marginLeft={margin.m2}
-                backgroundColor={colors.lMainColor}
+                backgroundColor={color.lMainColor}
             >
                 {type === 'add' ?
-                    <Add color={colors.mainColor} size={iconSize.s2} />
+                    <Add color={color.mainColor} size={iconSize.s2} />
                     :
-                    <ArrowDown color={colors.mainColor} size={iconSize.s2} />}
+                    <ArrowDown color={color.mainColor} size={iconSize.s2} />}
             </Box>
             <Box
                 width={'90%'}
                 marginLeft={margin.m2}
             >
                 <Txt bold size={fontSize.h4}>{title}</Txt>
-                <Txt size={fontSize.h7}>{subTitle}</Txt>
+                <Txt size={fontSize.h7} color={color.gray1}>{subTitle}</Txt>
             </Box>
 
         </Btn>

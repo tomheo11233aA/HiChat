@@ -3,7 +3,6 @@ import { setTheme } from "@redux/slice/appSlice";
 import { AppDispatch } from "@redux/store/store";
 import { useAppDispatch, useAppSelector, useTheme } from "@hooks/redux";
 import { themeAppSelector } from "@redux/selector/appSelector";
-import changeNavigationBarColor from "react-native-navigation-bar-color";
 
 const useSetting = () => {
     const color = useTheme();
@@ -15,15 +14,13 @@ const useSetting = () => {
         setIsSwitchOn(isSwitch);
     }, [theme]);
 
-    useEffect(() => {
-        changeNavigationBarColor(color.bg, true, true);
-    }, [theme, color.bg]);
-
     const handleChangeTheme = async (value: string) => {
         const payload = value === "light" ? "light" : "dark";
         dispatch(setTheme(payload));
     };
     return {
+        color,
+        theme,
         isSwitchOn,
         setIsSwitchOn,
         handleChangeTheme,

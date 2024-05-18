@@ -2,13 +2,13 @@ import React from 'react'
 import { t } from 'i18next'
 import Box from '@common/Box'
 import Txt from '@common/Txt'
+import Earn from '@screens/Earn'
 import Home from '@screens/Home'
-import { colors } from '@themes/colors'
+import Swap from '@screens/Swap'
 import { useTheme } from '@hooks/redux'
 import { screens } from '@contants/screens'
-import { useTranslation } from 'react-i18next'
-import { BOTTOM_TAB_HEIGHT, iconSize } from '@utils/responsive'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import { BOTTOM_TAB_HEIGHT, fontSize, iconSize } from '@utils/responsive'
 import { Home3, ArrowSwapHorizontal, Coin1, MaximizeCircle } from 'iconsax-react-native'
 
 const Tab = createBottomTabNavigator()
@@ -20,28 +20,28 @@ const AuthNavigation = () => {
       title: t('Home'),
       name: screens.Home,
       iconNotFocus: <Home3 color={color.black} size={iconSize.s} />,
-      iconFocus: <Home3 color={colors.mainColor} variant='Bold' size={iconSize.s} />
+      iconFocus: <Home3 color={color.mainColor} variant='Bold' size={iconSize.s} />
     },
     {
-      component: Home,
+      component: Swap,
       title: t('Swap'),
-      name: 'Swap',
+      name: screens.Swap,
       iconNotFocus: <ArrowSwapHorizontal color={color.black} size={iconSize.s} />,
-      iconFocus: <ArrowSwapHorizontal color={colors.mainColor} variant='Bold' size={iconSize.s} />
+      iconFocus: <ArrowSwapHorizontal color={color.mainColor} size={iconSize.s} />
     },
     {
-      component: Home,
+      component: Earn,
       title: t('Earn'),
-      name: 'Earn',
+      name: screens.Earn,
       iconNotFocus: <Coin1 color={color.black} size={iconSize.s} />,
-      iconFocus: <Coin1 color={colors.mainColor} variant='Bold' size={iconSize.s} />
+      iconFocus: <Coin1 color={color.mainColor} variant='Bold' size={iconSize.s} />
     },
     {
       component: Home,
       title: t('Explore'),
       name: 'Explore',
       iconNotFocus: <MaximizeCircle color={color.black} size={iconSize.s} />,
-      iconFocus: <MaximizeCircle color={colors.mainColor} variant='Bold' size={iconSize.s} />
+      iconFocus: <MaximizeCircle color={color.mainColor} variant='Bold' size={iconSize.s} />
     }
   ]
   return (
@@ -63,15 +63,12 @@ const AuthNavigation = () => {
             component={item.component}
             options={{
               tabBarIcon: ({ focused }) => (
-                <Box
-                  justifyCenter
-                  alignCenter
-                >
+                <Box alignCenter>
                   {focused ? item.iconFocus : item.iconNotFocus}
                   <Txt
                     center
-                    size={12}
-                    color={focused ? colors.mainColor : color.black}
+                    size={fontSize.h6}
+                    color={focused ? color.mainColor : color.black}
                   >
                     {t(item.title)}
                   </Txt>

@@ -3,10 +3,11 @@ import Hello from "@screens/Hello";
 import Setting from "@screens/Setting";
 import { screens } from "@contants/screens";
 import Onboarding from "@screens/OnBoarding";
-import { navigationRef } from '@utils/navigationRef'
+import { navigationRef } from '@utils/navigationRef';
 import CreateWallet from "@screens/Home/CreateWallet";
-import { NavigationContainer } from '@react-navigation/native'
-import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import AddCurrentWallet from "@screens/Home/AddCurrentWallet";
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const Stack = createNativeStackNavigator()
 const Container = () => {
@@ -17,6 +18,7 @@ const Container = () => {
                 <Stack.Screen name={screens.Main} component={Main} />
                 <Stack.Screen name={screens.Setting} component={Setting} />
                 <Stack.Screen name={screens.CreateWallet} component={CreateWallet} />
+                <Stack.Screen name={screens.AddCurrentWallet} component={AddCurrentWallet} />
             </Stack.Navigator>
         </NavigationContainer>
     )

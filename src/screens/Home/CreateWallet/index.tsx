@@ -1,4 +1,5 @@
 import Item from './Item'
+import Note from '../Note'
 import Header from './Header'
 import Scroll from '@common/Scroll'
 import React, { useState } from 'react'
@@ -18,10 +19,10 @@ const CreateNewWallet = () => {
         {fakeData.map((item: IItem) => (
           <Item key={item.id} item={item} isShow={isShow} toggleShow={toggleShow} />
         ))}
+        <Note note='Bạn có thể tạo một ví khác bất cứ lúc nào trong phần Quản lý ví.' />
       </Scroll>
     </KeyBoardSafe>
   )
 }
 
 export default React.memo(CreateNewWallet)
-

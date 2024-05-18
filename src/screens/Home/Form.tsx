@@ -43,7 +43,7 @@ const Form = () => {
             <BtnHome
                 title={t('Thêm ví hiện có')}
                 subTitle={t('Nhập khôi phục hoặc chỉ xem')}
-                onPress={() => { }}
+                onPress={() => navigate(screens.AddCurrentWallet)}
             />
             <Txt
                 size={fontSize.h4}

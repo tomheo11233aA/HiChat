@@ -63,7 +63,7 @@ const Input = forwardRef<TextInput, Props>(({
     marginRight,
     marginTop,
     paddingVertical,
-    paddingHorizontal = 20,
+    paddingHorizontal,
     marginVertical,
     marginHorizontal,
     radius,
@@ -114,7 +114,7 @@ const Input = forwardRef<TextInput, Props>(({
         setIsFocused(false);
         if (onBlur) onBlur(e);
     };
-    const backgroundColors = isFocused ? '#EBFAF1' : (backgroundColor ? backgroundColor : myColor.black4)
+    // const backgroundColors = isFocused ? '#EBFAF1' : (backgroundColor ? backgroundColor : myColor.black4)
     const myBoderColor = isFocused ? colors.mainColor : (borderColor ? borderColor : myColor.black4);
     const tintColors = isFocused ? colors.mainColor : (tintColor ? tintColor : myColor.black);
     const blockStyles = [
@@ -141,7 +141,8 @@ const Input = forwardRef<TextInput, Props>(({
             elevation: elevation || 3,
         },
         wrap && { flexWrap: 'wrap' },
-        { backgroundColor: backgroundColors },
+        // { backgroundColor: backgroundColors },
+        backgroundColor && { backgroundColor: backgroundColor },
         padding && { ...handlePadding(getSize.m(padding)) },
         margin && { ...handleMargin(getSize.m(margin)) },
         alignStart && styles.alignStart,

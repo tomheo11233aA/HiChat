@@ -76,10 +76,11 @@ export const padding = {
     p8: getSize.m(64),
 };
 
-export const BOTTOM_TAB_HEIGHT = scale(60);
+export const BOTTOM_TAB_HEIGHT = scale(80);
 
 export const iconSize = {
     xs: getSize.s(12),
+    xs1: getSize.s(16),
     s: getSize.s(20),
     s2: getSize.s(24),
     s3: getSize.s(28),

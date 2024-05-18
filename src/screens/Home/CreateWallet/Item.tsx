@@ -25,11 +25,17 @@ const Item: React.FC<ItemProps> = ({ isShow, item, toggleShow }) => {
                 padding={padding.p3}
                 marginTop={margin.m2}
                 radius={borderRadius.r4}
-                backgroundColor={color.bg2}
+                backgroundColor={color.boxColor}
                 onPress={() => toggleShow(item.id)}
             >
-                <Box backgroundColor={color.textColor} padding={padding.p1} radius={width}>
-                    {item.id === 1 ? <Edit2 size={iconSize.s} color={colors.mainColor} /> : <Polygon size={iconSize.s} color={colors.mainColor} />}
+                <Box
+                    radius={width}
+                    padding={padding.p1}
+                    backgroundColor={color.lMainColor}
+                >
+                    {item.id === 1 ?
+                        <Edit2 size={iconSize.s} color={color.mainColor} />
+                        : <Polygon size={iconSize.s} color={color.mainColor} />}
                 </Box>
 
                 <Box marginLeft={margin.m2} flex={1}>
@@ -40,7 +46,7 @@ const Item: React.FC<ItemProps> = ({ isShow, item, toggleShow }) => {
                     <Box row alignCenter>
                         <Txt
                             size={fontSize.h6}
-                            color={color.gray1}
+                            color={color.gray}
                             marginRight={margin.m1}
                         >
                             {t('Hiển thị chi tiết')}
@@ -49,8 +55,13 @@ const Item: React.FC<ItemProps> = ({ isShow, item, toggleShow }) => {
                     </Box>
                 </Box>
 
-                <Btn paddingVertical={padding.p1} paddingHorizontal={padding.p3} backgroundColor={color.textColor} radius={borderRadius.r2}>
-                    <Txt bold size={fontSize.h6} color={color.bg2}>
+                <Btn
+                    radius={borderRadius.r2}
+                    paddingVertical={padding.p1}
+                    paddingHorizontal={padding.p3}
+                    backgroundColor={color.mainColor}
+                >
+                    <Txt bold size={fontSize.h6} color={color.white}>
                         {t('Tạo')}
                     </Txt>
                 </Btn>
@@ -60,23 +71,28 @@ const Item: React.FC<ItemProps> = ({ isShow, item, toggleShow }) => {
             {isShow[item.id] && (
                 <>
                     <Box
-                        width={'100%'}
-                        backgroundColor={colors.gray2}
                         marginBottom={height * 0.02}
+                        backgroundColor={colors.gray2}
                     />
                     <Box
                         padding={padding.p3}
                         radius={borderRadius.r4}
-                        marginBottom={margin.m2}
-                        backgroundColor={color.bg2}
+                        backgroundColor={color.boxColor}
                     >
-                        {item.content.map((content: ContentItem) => (
+                        {item.content.map((content: ContentItem, index) => (
                             <Fragment key={content.id}>
-                                <Txt marginTop={margin.m1} bold size={fontSize.h5} marginBottom={margin.m1}>
+                                <Txt
+                                    bold
+                                    size={fontSize.h5}
+                                    marginTop={index === 0 ? 0 : margin.m2}
+                                >
                                     {content.title}
                                 </Txt>
 
-                                <Txt size={fontSize.h6} color={color.gray1}>
+                                <Txt
+                                    size={fontSize.h6}
+                                    color={color.gray1}
+                                >
                                     {content.subTitle}
                                 </Txt>
 
